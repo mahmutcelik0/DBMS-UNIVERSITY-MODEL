@@ -1,0 +1,19 @@
+CREATE TABLE `DEPT`
+(
+DCode INT NOT NULL,
+DName VARCHAR(40) NOT NULL,
+DOffice VARCHAR(40),
+DPhone VARCHAR(11),
+CollegeName VARCHAR(40) NOT NULL,
+ChairId BIGINT NOT NULL,
+CStartDate DATE NOT NULL,
+DType VARCHAR(5) NOT NULL,
+
+PRIMARY KEY(DCode),
+UNIQUE INDEX(DName),
+UNIQUE INDEX(ChairId,CStartDate),
+
+CHECK(length(DPhone) = 11),
+CHECK(`DType` = "CENG" OR `DType` = "SENG" OR `DType` = "AIENG")
+
+)

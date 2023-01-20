@@ -1,0 +1,5 @@
+SELECT  count(*)
+FROM COURSE,KEYWORDS
+WHERE COURSE.`CCode` = KEYWORDS.`CourseCode` 
+GROUP BY CourseCode
+ORDER BY CCode

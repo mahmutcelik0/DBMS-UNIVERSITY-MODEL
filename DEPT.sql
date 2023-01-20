@@ -1,0 +1,14 @@
+CREATE TABLE `DEPT`
+(
+`DCode` INT NOT NULL,
+`DName` VARCHAR(40) NOT NULL,
+`DOffice` VARCHAR(40),
+`DPhone` VARCHAR(11),
+`CollegeName` VARCHAR(40) NOT NULL,
+`ChairId` INT NOT NULL,
+`CStartDate` DATE,
+`DType` VARCHAR(40) NOT NULL,
+PRIMARY KEY (DCode),
+UNIQUE (DName,CollegeName),
+FOREIGN KEY (CollegeName) REFERENCES `COLLEGE`(`CName`)
+)

@@ -1,0 +1,10 @@
+CREATE TABLE ASSOCIATE_PROFESSOR
+(
+AssociateProfId BIGINT NOT NULL,
+AssociateProfAttribute VARCHAR(40),
+
+PRIMARY KEY(AssociateProfId)
+
+
+
+)

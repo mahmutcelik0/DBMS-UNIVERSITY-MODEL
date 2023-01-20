@@ -1,0 +1,8 @@
+CREATE TABLE THESE
+(
+FMId BIGINT NOT NULL, 
+ThCode VARCHAR(20) NOT NULL,
+TheseDescription Varchar(80), 
+
+PRIMARY KEY(FMId, ThCode)
+)

@@ -1,0 +1,16 @@
+CREATE TABLE COURSE
+(
+CCode VARCHAR(40) NOT NULL,
+CoName VARCHAR(40) NOT NULL,
+Credits float NOT NULL,
+CDesc VARCHAR(40),
+CLevel INT,
+LicenseOrNot BOOLEAN NOT NULL,
+IsEnglish BOOLEAN NOT NULL,
+
+PRIMARY KEY (CCode),
+UNIQUE(CoName),
+
+CHECK(CLevel = 0 OR CLevel = 1 OR CLevel = 2 OR CLevel = 3 OR CLevel = 4)
+
+)

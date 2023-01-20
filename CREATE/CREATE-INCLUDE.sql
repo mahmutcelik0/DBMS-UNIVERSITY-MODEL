@@ -1,0 +1,8 @@
+CREATE TABLE INCLUDE
+(
+CurriculumId INT NOT NULL,
+CourseCode VARCHAR(40) NOT NULL,
+
+PRIMARY KEY(CurriculumId,CourseCode)
+
+)

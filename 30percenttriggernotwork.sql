@@ -1,0 +1,27 @@
+CREATE DEFINER=`MAHMUT`@`%` TRIGGER `IsEnglishThirthControl` AFTER INSERT ON `include` FOR EACH ROW BEGIN
+    
+    IF
+		(
+         EXISTS(SELECT *
+			FROM CURRICULUM,COURSE
+            WHERE CURRICULUM.CurId = NEW.CurriculumId AND NEW.CourseCode = COURSE.CCode AND CURRICULUM.EnglishPercent LIKE '%30' 
+            AND (NOT EXISTS(SELECT * WHERE COURSE.IsEnglish = 1) )
+            ) 
+        )
+    THEN
+		SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = 'SJ WARNING - ENGLISH PERCENTS DOESNT MATCH';
+	END IF;
+    
+    IF
+		(
+        
+			 EXISTS(SELECT *
+			FROM CURRICULUM,COURSE
+            WHERE CURRICULUM.CurId = NEW.CurriculumId AND NEW.CourseCode = COURSE.CCode AND CURRICULUM.EnglishPercent LIKE '%30' 
+            AND (NOT EXISTS(SELECT * WHERE COURSE.IsEnglish = 0))
+            ) 
+        )
+    THEN
+		SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = 'SJ WARNING - ENGLISH PERCENTS DOESNT MATCH';
+	END IF;
+END

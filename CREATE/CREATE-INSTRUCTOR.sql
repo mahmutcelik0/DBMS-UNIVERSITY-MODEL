@@ -1,0 +1,7 @@
+CREATE TABLE INSTRUCTOR
+(
+InstructorId BIGINT NOT NULL,
+InstructorAttribute VARCHAR(40),
+
+PRIMARY KEY(InstructorId)
+)
